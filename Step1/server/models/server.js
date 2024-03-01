@@ -7,8 +7,8 @@ class Server {
     this.app = express();
     this.port = process.env.PORT || 3007;
     this.paths = {
-      auth: "/api/auth",
-      homepage: "/api/homepage",
+      auth: "http://api-user66007.se-rmutl.net:3007/api/auth",
+      homepage: "http://api-user66007.se-rmutl.net:3007/api/homepage",
     };
 
     //paths.auth
