@@ -1,7 +1,7 @@
 // Import required modules
 const path = require('path');
 const { app, BrowserWindow } = require('electron');
-const isDev = true;
+const isDev = false;
 
 // Initialize mainWindow variable
 let mainWindow;
@@ -26,14 +26,14 @@ const createWindow = () => {
   // Load the appropriate URL based on the environment
   mainWindow.loadURL(
     isDev
-      ? 'http://localhost:3000' // Development URL
+      ? 'http://localhost:3090' // Development URL
       : `file://${path.join(__dirname, '../build/index.html')}` // Production URL
   );
 
   // Open DevTools in development mode
-  if (isDev) {
+  //if (isDev) {
     mainWindow.webContents.openDevTools({ mode: 'detach' });
-  }
+  //}
 
 
 };
