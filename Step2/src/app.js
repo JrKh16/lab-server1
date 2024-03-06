@@ -10,7 +10,9 @@ import './css/styles.css';
 
 class App extends React.Component {
     componentDidMount() {
-        axios.get('/users')
+        //axios.get('/users')
+        axios.get('http://api-user66007.se-rmutl.net/api/users/allusers')
+        
             .then(response => {
                 console.log(response.data);
                 store.dispatch(addUsers(response.data.results));
