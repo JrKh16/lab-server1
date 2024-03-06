@@ -10,7 +10,7 @@ const User = ({ gender, name, location, email, picture, login ,dob}) => {
     };
 
     const saveUserData = (userData) => {
-        axios.post('http://api-user66.se-rmutl.net:3007/saveuser', userData) // ส่งข้อมูลผู้ใช้ไปยังเซิร์ฟเวอร์ Express
+        axios.post('http://api-user66007.se-rmutl.net/saveuser', userData) // ส่งข้อมูลผู้ใช้ไปยังเซิร์ฟเวอร์ Express
             .then(response => {
                 console.log(response.data); // แสดงข้อมูลการตอบกลับจากเซิร์ฟเวอร์
             })
