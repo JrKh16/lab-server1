@@ -7,12 +7,10 @@ class Server {
     this.app = express();
     this.port = process.env.PORT || 3007;
     this.paths = {
-      auth: "http://api-user66007.se-rmutl.net:3007/api/auth",
-      homepage: "http://api-user66007.se-rmutl.net:3007/api/homepage",
+      auth: "/api/auth",
+      homepage: "/api/homepage",
+      users: "/api/users",
     };
-
-    //paths.auth
-    //auth.homepage
 
     this.middlewares();
     this.routes();
@@ -22,22 +20,31 @@ class Server {
     this.app.use(cors());
     this.app.use(express.json());
 
+    /*
     // Pick up React index.html file
     this.app.use(
       express.static(path.join(__dirname, "../../client/build"))
     );
+    */
+
   }
 
   // Bind controllers to routes
   routes() {
-    this.app.use(this.paths.auth, require("../routes/auth"));
-    this.app.use(this.paths.homepage, require("../routes/homepage"));
+    this.app.use(this.paths.auth, require("http://api-user66007.se-rmutl.net:3007/routes/auth"));
+    this.app.use(this.paths.homepage, require("http://api-user66007.se-rmutl.net:3007/routes/homepage"));
+    this.app.use(this.paths.users, require("http://api-user66007.se-rmutl.net:3007/routesusers"));
+
     // Catch all requests that don't match any route
     this.app.get("*", (req, res) => {
+      /*
       res.sendFile(
         path.join(__dirname, "../../client/build/index.html")
       );
+      */
+      res.send("<h1>Hello,P</h1>");
     });
+
   }
 
   listen() {
