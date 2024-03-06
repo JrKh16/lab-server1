@@ -9,6 +9,7 @@ package.json
 
 # production
 /build
+env.js
 
 # misc
 .DS_Store
