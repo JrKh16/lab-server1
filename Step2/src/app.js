@@ -11,7 +11,7 @@ import './css/styles.css';
 class App extends React.Component {
     componentDidMount() {
         //axios.get('/users')
-        axios.get('http://api-user66007.se-rmutl.net/api/users/allusers')
+        axios.get('https://randomuser.me/api/?page=1&results=10')
         
             .then(response => {
                 console.log(response.data);
